@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('/static/bg.jpg');
+            background-size: cover;
+            height: 100vh;
+        }
+        #logo{
+            font-family: monospace;
+            padding-left: 200px;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+
+        header {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #dedede;
+            padding-bottom: 10px;
+        }
+
+        form {
+            background-image: radial-gradient(circle, #161545, #171647, #18174a, #19184c, #1a194f, #221647, #26133f, #281138, #260d27, #200819, #16040d, #000000);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+            width: 300px;
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 150px; 
+            position: relative;
+            z-index: 1;
+            animation: slideIn 1s ease-in-out;
+           
+        }
+
+        @keyframes slideIn {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+            to {
+                margin-left: 150px;
+                opacity: 1;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #5d5d5d;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+        }
+
+        #submit-btn {
+            background-color: white;
+            color: black;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease-in-out;
+            border: 2px solid #04AA6D;
+        }
+
+        #submit-btn:hover {
+            background-color: #04aa2e; 
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-bottom: 10px;
+            color: red;
+        }
+
+        p{
+            color: rgb(255, 255, 255);
+        }
+
+
+        footer {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+        #aboutButton {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 id="logo">Elderly People Monitoring System</h1>
+            <div class="header-buttons">
+                <button id="aboutButton" onclick="openAboutPage()">About</button>
+            </div>
+        </div>
+    </header>
+
+        
+      
+    <form method="POST" action="{{ url_for('login') }}">
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button id="submit-btn" type="submit">Login</button>
+    </form>
+
+
+    <script>
+
+    
+        function openAboutPage() {
+            var aboutPageUrl = '/about';
+            window.open(aboutPageUrl, '_blank');
+        }
+
+        
+    </script>
+
+    </main>
+
+    <footer>
+        <p>&copy;EMS</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS - About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('/static/bg.jpg');
+            background-color: #f2f2f2;
+        }
+
+        #logo{
+            font-family: monospace;
+            padding-left: 200px;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+
+        header {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        p{
+            color: rgb(255, 255, 255);
+        }
+
+
+        footer {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            text-align: center;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        #aboutContainer {
+            background-image: radial-gradient(circle, #161545, #171647, #18174a, #19184c, #1a194f, #221647, #26133f, #281138, #260d27, #200819, #16040d, #000000);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+        }
+
+        #aboutContainer h2 {
+            color: #ffffff;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #aboutContainer p {
+            color: #ffffff;
+        }
+
+        #aboutContainer ul {
+            list-style-type: none;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        #aboutContainer li {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        #homeButton {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        #homeButton {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 id="logo">Elderly People Monitoring System</h1>
+            <div class="header-buttons">
+                <button id="homeButton" onclick="goToHome()">Home</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="aboutContainer">
+            <h2>About</h2>
+            <p>
+                Elderly People Monitoring System (EMS) is a project designed to monitor and ensure the well-being of elderly individuals. The system utilizes computer vision and deep learning techniques to detect falls and analyze emotional states through facial expressions.
+            </p>
+            <h2>Project Details</h2>
+            <ul>
+                <li>Technology Stack: Python, Flask, OpenCV, PyTorch, DeepFace, TensorFlow</li>
+                <li>Features:
+                    <ul>
+                        <li>Real-time fall detection using computer vision</li>
+                        <li>Emotion analysis through facial expressions</li>
+                        <!-- Add more features as needed -->
+                    </ul>
+                </li>
+                <li>Contributors:
+                    <ul>
+                        <li>Atharv Raotole (2020400042)</li>
+                        <li>Sailee Shirodkar (2020400057)</li>
+                        <li>Rahul Shukla (2020400058)</li>
+                        <!-- Add more contributors as needed -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;EMS</p>
+    </footer>
+
+    <script>
+
+
+        function goToHome() {
+            var homeUrl = '/monitoring';
+            window.open(homeUrl, '_blank');
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+2024-01-16 03:22:01,365 - INFO -  * Restarting with watchdog (windowsapi)
+2024-01-16 03:22:13,374 - WARNING -  * Debugger is active!
+2024-01-16 03:22:13,379 - INFO -  * Debugger PIN: 145-925-652
+2024-01-16 03:22:13,698 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2024-01-16 03:23:17,484 - INFO -  * Restarting with watchdog (windowsapi)
+2024-01-16 03:23:26,188 - WARNING -  * Debugger is active!
+2024-01-16 03:23:26,193 - INFO -  * Debugger PIN: 145-925-652
+2024-01-16 03:23:26,505 - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

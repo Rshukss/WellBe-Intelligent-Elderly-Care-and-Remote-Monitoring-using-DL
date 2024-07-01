@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Chatbot</title>
+    
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 id="logo">Elderly People Chatbot</h1>
+            <div class="header-buttons">
+                <button id="homeButton" onclick="goToHome()">Home</button>
+            </div>
+        </div>
+    </header>
+    <div id="chat-container">
+        <div id="chatbox">
+            <p class="botText">
+                <img id="bot-img" src="/static/bot.png"/>
+                <span>Hi {{ user_info.name }} I'm Your bot, How can I help.</span>
+            </p>
+        </div>
+    </div>
+    <div id="userInput">
+        <form id="chatForm" class="input-group">
+            <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
+            <button type="submit" class="button"><span>Send</span></button>
+        </form>
+    </div>
+
+    <footer>
+        <p id="footer-text">&copy;EMS</p>
+    </footer>
+
+    <script src="/static/main.js" defer></script>
+    <script>
+        function goToHome() {
+            var homeUrl = '/monitoring';
+            window.location.href = homeUrl;
+        }
+    </script>
+    
+    
+</body>
+
+</html>

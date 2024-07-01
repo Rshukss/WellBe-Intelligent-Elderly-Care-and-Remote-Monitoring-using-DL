@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('/static/bg.jpg');
+            background-color: #f2f2f2;
+        }
+        
+        header {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 56px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+            margin-right: 179.600px;
+            margin-left: 179.600px;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #homeButton {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        #homeButton {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #logo{
+            font-family: monospace;
+            padding-left: 200px;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+            margin: 0px;
+            font-size: 2.5rem;
+        }
+
+        p{
+            color: rgb(255, 255, 255);
+        }
+        footer {
+            background-image: radial-gradient(circle, #161545, #210f34, #220a25, #1f0619, #17030e, #120209, #0a0104, #000000, #000000, #000000, #000000, #000000);
+            text-align: center;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #form_details{
+            padding: 10px;
+            background: #141414;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 70px auto;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #00bfff;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #00bfff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 id="logo">Elderly People Monitoring System</h1>
+            <div class="header-buttons">
+                <button id="homeButton" onclick="goToHome()">Home</button>
+            </div>
+        </div>
+    </header>
+    <form id="form_details" method="POST" action="/save_user_details">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required>
+
+        <input type="submit" value="Start Chat">
+    </form>
+    <footer>
+        <p>&copy;EMS</p>
+    </footer>
+
+    <script>
+
+
+        function goToHome() {
+            var homeUrl = '/monitoring';
+            window.open(homeUrl);
+        }
+    </script>
+</body>
+</html>
+
