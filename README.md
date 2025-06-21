@@ -95,7 +95,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📚 Acknowledgements
+## Acknowledgements
 
 - [YOLOv7](https://github.com/WongKinYiu/yolov7) for pose estimation.
 - [Flask](https://flask.palletsprojects.com/) for the web framework.
